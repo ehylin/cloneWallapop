@@ -3,18 +3,18 @@
     "anuncios": [{
             "id": 1,
             "image": "https://www.smartworld.it/wp-content/uploads/2018/07/Facebook-Mark-Zuckerberg.jpg",
-            "nombre": "Producto 1",
-            "descripcion": "Descripción del producto 1",
-            "precio": 100,
-            "tipo": "Venta"
+            "name": "Producto 1",
+            "description": "Descripción del producto 1",
+            "price": 100,
+            "type": "Venta"
         },
         {
             "id": 2,
             "image": "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
-            "nombre": "Producto 2",
-            "descripcion": "Descripción del producto 2",
-            "precio": 50,
-            "tipo": "Compra"
+            "name": "Producto 2",
+            "description": "Descripción del producto 2",
+            "price": 50,
+            "type": "Compra"
         }
     ]
 }
