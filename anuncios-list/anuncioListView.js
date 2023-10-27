@@ -1,10 +1,11 @@
 export const buildAnuncio = (anuncio) => {
     return `
-  <a href="./tweetDetail.html?id=${anuncio.id}">
+  <a href="./anuncioDetail.html?id=${anuncio.id}">
     <span>${anuncio.handler}</span>
-    <img src="${anuncio.photo}" alt="tweet image">
+    <img src="${anuncio.photo}" alt="anuncio image">
     <p>${anuncio.description}</p>
     <p>${anuncio.price}$ Euros</p>
+    <p>tipo: ${anuncio.type}</p>
   </a>
 
 `;

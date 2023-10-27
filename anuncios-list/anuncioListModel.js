@@ -4,7 +4,8 @@ const transformAnuncios = (anuncios) => {
         description: anuncio.description,
         price: anuncio.price,
         photo: anuncio.image,
-        id: anuncio.id
+        id: anuncio.id,
+        type: anuncio.type
     }))
 }
 

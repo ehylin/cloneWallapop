@@ -8,5 +8,5 @@ export const buildUnauthorizedSession = () => {
 }
 
 export const buildAuthenticatedSession = () => {
-    return `<button>Cerrar sesión</button>`;
+    return ` <a href="./anuncio-creation.html">Create anuncio</a> <button>Cerrar sesión</button>`;
 }
