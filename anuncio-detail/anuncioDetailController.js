@@ -8,25 +8,23 @@ export const anuncioDetailController = async(anuncioDetail, anuncioId) => {
     try {
         const anuncio = await getAnuncio(anuncioId);
         anuncioDetail.innerHTML = buildAnuncio(anuncio);
-        console.log(anuncio)
+
         handleDeleteAnuncio(anuncio, anuncioDetail);
     } catch (error) {
         dispatchEvent('anuncioLoaded', { type: "error", message: "El anuncio no existe" }, anuncioDetail);
-        // setTimeout(() => {
-        //     window.location = './index.html';
-        // }, 3000);
+        setTimeout(() => {
+            window.location = './index.html';
+        }, 3000);
     }
 
 }
 
 const handleDeleteAnuncio = (anuncio, anuncioDetail) => {
     const token = localStorage.getItem('token');
-    console.log(token)
+
 
     if (token) {
         const { userId } = decodeToken(token);
-        console.log(userId)
-        console.log(anuncio)
 
         if (userId === anuncio.userId) {
             addDeleteAnuncioButton(anuncio, anuncioDetail);

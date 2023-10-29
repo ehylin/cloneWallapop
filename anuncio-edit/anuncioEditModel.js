@@ -2,9 +2,9 @@ import { sparrestApi } from '../utils/sparrestApi.js'
 
 const parseAnuncio = (anuncio) => {
     return {
-        handler: anuncio.name,
+        handler: anuncio.user.username,
         description: anuncio.description,
-        // userId: anuncio.users.id,
+        userId: anuncio.users.id,
         price: anuncio.price,
         type: anuncio.type,
         id: anuncio.id
@@ -12,21 +12,12 @@ const parseAnuncio = (anuncio) => {
 }
 
 
-export const getAnuncio = async(anuncioId, loggedUserId) => {
-    const endpoint = `api/anuncios/${anuncioId}`;
+export const getAnuncio = async(anuncioId) => {
+    const endpoint = `api/anuncios/${anuncioId}?_expand=user`;
 
-    try {
-        const anuncio = await sparrestApi().get(endpoint);
-        const parsedAnuncio = parseAnuncio(anuncio);
+    const anuncio = await sparrestApi().get(endpoint);
 
-        // Verifica si el usuario logeado es el creador del anuncio
-        parsedAnuncio.isCreator = loggedUserId === parsedAnuncio.userId;
-        console.log(parseAnuncio)
-        return parsedAnuncio;
-    } catch (error) {
-        // Manejo de errores
-        throw error;
-    }
+    return parseAnuncio(anuncio);
 }
 
 
@@ -36,7 +27,7 @@ export const updateAnuncio = async(anuncioId, updatedData) => {
     try {
         const response = await sparrestApi().put(endpoint, updatedData);
 
-        return response // Puedes ajustar esto según la respuesta real del servidor
+        return response
     } catch (error) {
         throw error;
     }

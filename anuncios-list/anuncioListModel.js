@@ -2,8 +2,7 @@ import { renderAnuncios } from "./anuncioListController.js";
 
 const transformAnuncios = (anuncios) => {
     return anuncios.map(anuncio => ({
-        //handler: anuncio.user.username,
-        handler: anuncio.name,
+        handler: anuncio.user.username,
         description: anuncio.description,
         price: anuncio.price,
         photo: anuncio.image,
@@ -21,9 +20,9 @@ export const getAnuncios = async() => {
     try {
         const response = await fetch(url);
         const anuncios = await response.json();
-        console.log(anuncios)
+
         parsedAnuncios = transformAnuncios(anuncios)
-        console.log('aaaqio', parsedAnuncios);
+
     } catch (error) {
         throw error;
     }
@@ -34,8 +33,7 @@ export const getAnuncios = async() => {
 export const searchAnuncios = async(searchTerm, anuncioList) => {
     const url = "http://localhost:8000/api/anuncios";
 
-    console.log(searchTerm, 'ff')
-    console.log(anuncioList)
+
 
     if (!url) {
         console.error("La variable 'url' está indefinida o tiene un valor incorrecto.");
@@ -52,7 +50,6 @@ export const searchAnuncios = async(searchTerm, anuncioList) => {
             return name.includes(searchTerm);
         });
 
-        //parsedAnuncios = transformAnuncios(anuncios)
 
         renderAnuncios(filteredAnuncios, anuncioList);
     } catch (error) {

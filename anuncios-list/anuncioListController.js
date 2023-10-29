@@ -9,14 +9,14 @@ export const anuncioListController = async(anuncioList) => {
 
     searchInput.addEventListener('input', () => {
         const searchTerm = searchInput.value.toLowerCase();
-        console.log(searchTerm);
+
         searchAnuncios(searchTerm, anuncioList);
     });
 
     try {
         dispatchEvent('startLoadingAnuncios', null, anuncioList);
         anuncios = await getAnuncios();
-        console.log(anuncios)
+
 
     } catch (error) {
         const event = createCustomEvent('error', 'Error cargando anuncios')
