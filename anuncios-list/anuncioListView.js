@@ -1,15 +1,18 @@
 export const buildAnuncio = (anuncio) => {
     return `
   <a href="./anuncioDetail.html?id=${anuncio.id}">
-    <span>${anuncio.handler}</span>
-    <img src="${anuncio.photo}" alt="anuncio image">
+    <h3>${anuncio.handler}</h3>
+    <img  src="${anuncio.photo}" alt="anuncio image">
     <p>${anuncio.description}</p>
     <p>${anuncio.price}$ Euros</p>
     <p>tipo: ${anuncio.type}</p>
   </a>
+  </br>
+  <a href="./anuncio-edit.html?id=${anuncio.id}">Editar anuncio</a> 
 
 `;
 }
+
 
 
 export const emptyAnuncios = () => {

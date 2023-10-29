@@ -6,26 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Anuncio!</title>
     <link rel="stylesheet" href="./notifications/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="https://js.bytescale.com/sdk/v3"></script>
+    <link rel="stylesheet" href="./css/form.css" />
 </head>
 
 <body>
+    <h1>Crear Anuncio</h1>
+
     <section id="notifications"></section>
-    <form id="anuncioCreation">
-        <label for="name">Nombre</label>
-        <input type="text" name="name" id="name" required />
-        <label for="description">Descripcion</label>
-        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
-        <label for="photo">Foto</label>
-        <input type="file" name="image" id="image" required />
-        <label for="price">Precio</label>
-        <input type="text" name="price" id="price" required />
+    <section class="container">
+        <form id="anuncioCreation">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" required /><br><br>
+            <label for="description">Descripcion</label>
+            <textarea name="description" id="description" cols="30" rows="10" required></textarea><br><br>
+            <label for="photo">Foto</label>
+            <input type="file" name="image" id="image" required /><br><br>
+            <label for="price">Precio</label>
+            <input type="text" name="price" id="price" required /><br><br>
 
-        <label for="price">Tipo</label>
-        <input type="text" name="type" id="type" required />
+            <label for="price">Tipo</label>
+            <input type="text" name="type" id="type" required /><br><br>
 
-        <button type="submit">Crear Anuncio</button>
-    </form>
+            <button type="submit">Crear Anuncio</button>
+        </form>
+    </section>
 
     <script type="module" src="./anuncio-creation/index.js"></script>
 </body>

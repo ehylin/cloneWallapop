@@ -43,10 +43,41 @@ export const sparrestApi = () => {
                 throw error;
             }
         }
+
+
     }
+
+    const put = async(endpoint, data) => {
+        const url = baseUrl + endpoint;
+        const token = localStorage.getItem('token');
+
+        try {
+            const response = await fetch(url, {
+                method: "PUT",
+                headers: {
+                    'Content-type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (!response.ok) {
+                const responseData = await response.json();
+                const message = responseData.message || 'No ha sido posible actualizar el elemento';
+                throw new Error(message);
+            }
+        } catch (error) {
+            if (error.message) {
+                throw error.message;
+            } else {
+                throw error;
+            }
+        }
+    };
 
     return {
         get: get,
         delete: remove,
+        put: put,
     }
 }

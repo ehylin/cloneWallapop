@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./loader/style.css" />
+    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
     <section id="loader"></section>
-    <form id="login">
-        <label for="email">email: </label>
-        <input type="email" id="email" name="email" required />
-        <br />
+    <h1>Iniciar sesion</h1>
+    <section class="container">
+        <form id="login" class="container">
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" required />
+            <br /> <br />
 
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" required minlength="6" />
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required minlength="6" /><br /> <br />
 
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit">Login</button>
+        </form>
+    </section>
     <script type="module" src="./login/index.js"></script>
 </body>
 

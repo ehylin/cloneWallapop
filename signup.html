@@ -7,25 +7,31 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./notifications/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
 </head>
 
 <body>
     <section id="notifications"></section>
-    <form id="signup">
-        <label for="email">Email:</label>
-        <input type="email" id="email" required />
-        <br />
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" required minlength="6" />
-        <br />
+    <h1>Crear Usuario</h1>
+    <section class="container">
+        <form id="signup">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required />
+            <br /> <br />
 
-        <label for="password-confirmation">Repita contraseña:</label>
-        <input type="password" id="password-confirmation" required minlength="6" />
-        <br />
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required minlength="6" />
+            <br /> <br />
 
-        <button type="submit">Crear usuario</button>
-    </form>
+            <label for="password-confirmation">Repita contraseña:</label>
+            <input type="password" id="password-confirmation" required minlength="6" />
+            <br /> <br />
+
+            <button type="submit">Crear usuario</button>
+        </form>
+    </section>
 
     <script type="module" src="./signup/index.js"></script>
 </body>
