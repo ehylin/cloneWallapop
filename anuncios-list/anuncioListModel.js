@@ -1,5 +1,6 @@
 const transformAnuncios = (anuncios) => {
     return anuncios.map(anuncio => ({
+        //handler: anuncio.user.username,
         handler: anuncio.name,
         description: anuncio.description,
         price: anuncio.price,
@@ -11,18 +12,16 @@ const transformAnuncios = (anuncios) => {
 
 
 export const getAnuncios = async() => {
-    const url = "http://localhost:8000/api/anuncios";
+    const url = "http://localhost:8000/api/anuncios?_expand=user";
     let parsedAnuncios = [];
-
-    console.log('entro')
 
     try {
         const response = await fetch(url);
         const anuncios = await response.json();
+        console.log(anuncios)
         parsedAnuncios = transformAnuncios(anuncios)
-        console.log('entro try')
+        console.log('aaaqio', parsedAnuncios);
     } catch (error) {
-        console.log('entro cath')
         throw error;
     }
 

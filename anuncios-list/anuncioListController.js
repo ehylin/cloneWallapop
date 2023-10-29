@@ -8,6 +8,7 @@ export const anuncioListController = async(anuncioList) => {
     try {
         dispatchEvent('startLoadingAnuncios', null, anuncioList);
         anuncios = await getAnuncios();
+        console.log(anuncios)
 
     } catch (error) {
         const event = createCustomEvent('error', 'Error cargando anuncios')
@@ -27,12 +28,14 @@ export const anuncioListController = async(anuncioList) => {
 
 }
 
-const renderAnuncios = (anuncios, anuncioList) => {
+const renderAnuncios = (anuncios, anuncioList, loggedUserId) => {
     anuncios.forEach(anuncio => {
         const anuncioContainer = document.createElement('div');
         anuncioContainer.classList.add('anuncio');
 
         anuncioContainer.innerHTML = buildAnuncio(anuncio);
+
+
 
         anuncioList.appendChild(anuncioContainer)
     })
